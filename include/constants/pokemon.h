@@ -156,7 +156,7 @@
 #define NUM_BATTLE_STATS (NUM_STATS + 2) // includes Accuracy and Evasion
 
 // Shiny odds
-#define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 32000 // Actual probability is SHINY_ODDS/65536 (Default) 8
 
 #define MON_DATA_PERSONALITY                0
 #define MON_DATA_PARTY_LOCK                 1
@@ -589,6 +589,9 @@ typedef enum EvoMethod {
     EVO_CORONET,
     EVO_ETERNA,
     EVO_ROUTE217,
+    EVO_LEVEL_ITEM,
+    EVO_LEVEL_DAY,
+    EVO_LEVEL_NIGHT,
 } EvoMethod;
 
 typedef enum {

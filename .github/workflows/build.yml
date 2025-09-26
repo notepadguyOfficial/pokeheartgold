@@ -2,7 +2,7 @@ name: build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ qol-features ]
   pull_request:
   workflow_dispatch:
 

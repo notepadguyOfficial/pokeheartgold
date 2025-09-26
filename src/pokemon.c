@@ -2953,6 +2953,24 @@ u16 GetMonEvolution(Party *party, Pokemon *mon, u8 context, u16 usedItem, int *m
                 }
                 break;
             }
+            case EVO_LEVEL_ITEM:
+                if (level >= 45 && heldItem == evoTable[i].param) {
+                    target = evoTable[i].target;
+                    *method_ret = EVO_LEVEL_ITEM;
+                }
+                break;
+            }
+            ase EVO_LEVEL_DAY:
+                if (evoTable[i].param <= level && IsNighttime() == 0) {
+                    target = evoTable[i].target;
+                    *method_ret = EVO_LEVEL_DAY;
+                }
+                break;
+            case EVO_LEVEL_NIGHT:
+                if (evoTable[i].param <= level && IsNighttime() == 1) {
+                    target = evoTable[i].target;
+                    *method_ret = EVO_LEVEL_NIGHT;
+                }
             if (target != SPECIES_NONE) {
                 break;
             }
